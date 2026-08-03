@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Restu.dev — Portofolio</title>
+<meta name="description" content="Portofolio Restu Nurrokhman." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<!-- ================= INTRO — frame logo 4 detik + audio ================= -->
+<div id="pageIntro" class="page-intro">
+  <canvas id="introCanvas" aria-hidden="true"></canvas>
+  <button id="introSkip" class="intro-skip" type="button">Lewati ⏭</button>
+</div>
+<audio id="introAudio" src="assets/audio/intro.mp3" preload="auto"></audio>
+
+<!-- ================= HEADER ================= -->
+<header id="site-header" class="site-header">
+  <div class="led-wrapper">
+    <div class="led-light led-left"></div>
+    <div class="led-light led-right"></div>
+  </div>
+  <div class="header-inner">
+    <button id="hamburger-btn" class="icon-btn" aria-label="Buka/tutup menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <div class="header-search">
+      <button id="search-btn" class="icon-btn" aria-label="Cari">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <input id="search-input" class="search-input" type="text" placeholder="Cari skill / project…" />
+    </div>
+
+    <a href="#top" class="header-title"><span class="header-bracket">&lt;/&gt;</span> Restu.dev</a>
+
+    <div class="header-actions">
+      <div class="lang-switcher">
+        <button id="lang-toggle" class="icon-btn" aria-label="Pilih bahasa / Language">
+          <span id="lang-current-flag">🇮🇩</span>
+        </button>
+        <div id="lang-menu" class="lang-menu" aria-hidden="true">
+          <button type="button" class="lang-option" data-lang="id"><span>🇮🇩</span> Indonesia</button>
+          <button type="button" class="lang-option" data-lang="en"><span>🇬🇧</span> English</button>
+          <button type="button" class="lang-option" data-lang="ja"><span>🇯🇵</span> 日本語</button>
+          <button type="button" class="lang-option" data-lang="zh"><span>🇨🇳</span> 中文</button>
+        </div>
+      </div>
+      <button id="robot-mascot" class="robot-mascot" aria-label="Halo!">🤖</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HAMBURGER PANEL ================= -->
+<div id="panel-overlay" class="panel-overlay"></div>
+<nav id="hamburger-panel" class="hamburger-panel" aria-hidden="true">
+  <a href="#top" data-close-panel data-i18n-title="navHero" title="Beranda"><span class="menu-icon">🏠</span></a>
+  <a href="#background" data-close-panel data-i18n-title="eyebrowBackground" title="Latar"><span class="menu-icon">🖼️</span></a>
+  <a href="#skill" data-close-panel data-i18n-title="eyebrowSkill" title="Skill"><span class="menu-icon">🛠️</span></a>
+  <a href="#project" data-close-panel data-i18n-title="eyebrowProject" title="Project"><span class="menu-icon">🚀</span></a>
+</nav>
+
+<main id="top">
+
+  <!-- ================= HERO — Selamat Datang ================= -->
+  <section id="hero" class="section-hero">
+    <canvas id="starfield" class="starfield" aria-hidden="true"></canvas>
+    <div class="hero-scrim"></div>
+
+    <div class="section-inner hero-grid hero-content reveal-up" id="heroContent">
+      <div class="hero-text">
+        <span class="hero-badge" data-i18n="heroBadge">Terbuka untuk Kolaborasi</span>
+        <h1 class="hero-heading">
+          <span id="typedGreeting" class="typed-greeting"></span>
+          <span class="grad-text">Restu Nurrokhman</span>
+        </h1>
+        <p class="hero-role"><span data-i18n="heroRolePrefix">Saya seorang</span> <strong data-i18n="heroRole">Pelajar IT</strong></p>
+        <p class="hero-desc" data-i18n="heroDesc">Belajar membangun web modern, dari tampilan sampai logikanya.</p>
+        <p class="hero-moto" data-i18n="motoQuote">
+          “Diam bukan perilaku yang buruk, tapi sedang mencari kesempatan
+          untuk kesuksesan, seperti sedang mengasah pedang sampai tidak
+          sadar membelah lautan.”
+        </p>
+        <div class="hero-actions">
+          <a href="#project" class="btn-primary" data-i18n="heroBtnProject">Lihat Project →</a>
+          <div class="hero-contact-icons" id="heroContactIcons"></div>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-glow"></div>
+        <img class="hero-photo" src="assets/img/profile.jpg" alt="Restu Nurrokhman" />
+      </div>
+    </div>
+    <div class="intro-hint" id="intro-hint" data-i18n="scrollHint">Scroll untuk melihat lebih ↓</div>
+  </section>
+
+  <!-- ================= BACKGROUND — kartu bio (paling atas) + kenangan ================= -->
+  <section id="background" class="section section-background">
+    <div class="section-inner">
+      <span class="eyebrow reveal-left" data-i18n="eyebrowBackground">Latar</span>
+      <h2 class="reveal-left" data-i18n="headingBackground">Jejak &amp; cerita</h2>
+
+      <div class="bg-grid">
+        <div class="bio-card-wrap reveal-left">
+          <div class="bio-card-stage" id="bioCardStage">
+            <svg class="lanyard-svg"><path id="bioStrapPath" class="lanyard-strap" d="M 0 0 C 0 0, 0 0, 0 0" /></svg>
+            <div class="bio-drag-wrapper" id="bioDragWrapper">
+              <div class="bio-clip"><div class="bio-clip-ring"></div></div>
+              <div class="bio-holder-sleeve">
+                <div class="bio-holder-hole"></div>
+                <div class="bio-card-3d" id="bioCard3d">
+                  <div class="bio-card-face bio-card-front">
+                    <img class="bio-photo" src="assets/img/profile.jpg" alt="Restu Nurrokhman" />
+                    <div class="bio-photo-scrim"></div>
+                    <div class="bio-name-tag"><h3>Restu Nurrokhman</h3></div>
+                    <span class="bio-hint" data-i18n="bioHint">Tarik / klik kartunya</span>
+                  </div>
+                  <div class="bio-card-face bio-card-back">
+                    <dl class="bio-list">
+                      <div><dt data-i18n="bioNama">Nama</dt><dd>Restu Nurrokhman</dd></div>
+                      <div><dt data-i18n="bioUmur">Umur</dt><dd>18 <span data-i18n="bioTahun">tahun</span></dd></div>
+                      <div><dt data-i18n="bioStatus">Status</dt><dd data-i18n="bioStatusValue">Pelajar</dd></div>
+                      <div><dt data-i18n="bioTujuan">Tujuan</dt><dd>IT</dd></div>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="memory-slideshow reveal-right" id="memory-slideshow">
+          <img src="assets/img/memories/memory-01.jpg" class="memory-slide is-active" alt="Momen 1" />
+          <img src="assets/img/memories/memory-02.jpg" class="memory-slide" alt="Momen 2" />
+          <img src="assets/img/memories/memory-03.jpg" class="memory-slide" alt="Momen 3" />
+          <img src="assets/img/memories/memory-04.jpg" class="memory-slide" alt="Momen 4" />
+          <img src="assets/img/memories/memory-05.jpg" class="memory-slide" alt="Momen 5" />
+          <img src="assets/img/memories/memory-06.jpg" class="memory-slide" alt="Momen 6" />
+          <img src="assets/img/memories/memory-07.jpg" class="memory-slide" alt="Momen 7" />
+          <div class="slideshow-dots" id="slideshow-dots"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILL ================= -->
+  <section id="skill" class="section section-skill">
+    <div class="section-inner">
+      <span class="eyebrow reveal-left" data-i18n="eyebrowSkill">Kemampuan</span>
+      <h2 class="reveal-left" data-i18n="headingSkill">Skill</h2>
+
+      <h3 class="skill-subhead" data-i18n="subheadProgramming">Bahasa Pemrograman</h3>
+
+      <h4 class="skill-group-label" data-i18n="groupFrontend">Frontend Development</h4>
+      <div class="skill-icon-row" id="skill-icon-row-frontend"></div>
+
+      <h4 class="skill-group-label skill-group-spaced" data-i18n="groupBackend">Backend &amp; Languages</h4>
+      <div class="skill-icon-row" id="skill-icon-row-backend"></div>
+
+      <div class="skill-marquee-wrap" id="skill-marquee-wrap">
+        <div class="skill-marquee" id="skill-marquee">
+          <div class="skill-track" id="skill-track"></div>
+        </div>
+      </div>
+      <p class="skill-hint" data-i18n="skillHint">Klik salah satu ikon atau kartu untuk menyorotnya di tengah.</p>
+
+      <h3 class="skill-subhead skill-subhead-spaced" data-i18n="subheadLanguage">Bahasa</h3>
+      <div class="lang-skill-grid" id="langSkillGrid"></div>
+
+      <h3 class="skill-subhead skill-subhead-spaced" data-i18n="subheadCert">Sertifikat Bahasa</h3>
+      <div class="cert-list" id="certList"></div>
+
+      <h3 class="skill-subhead skill-subhead-spaced" data-i18n="subheadField">Job / Bidang</h3>
+      <div class="field-chip-row" id="fieldChipRow"></div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECT ================= -->
+  <section id="project" class="section section-project">
+    <div class="section-inner">
+      <span class="eyebrow reveal-left" data-i18n="eyebrowProject">Hasil karya</span>
+      <h2 class="reveal-left" data-i18n="headingProject">Project</h2>
+      <div class="project-grid" id="project-grid"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span class="footer-wordmark">RESTU.DEV</span>
+  <span class="footer-note" data-i18n="footerNote">© 2026 Restu Nurrokhman — dibangun dengan HTML, CSS &amp; JS.</span>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
